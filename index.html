@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Guess the Hero</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     ÉCRAN DE DÉPART
+========================== -->
+
+<div id="start-screen">
+
+    <div class="title-container">
+
+        <img src="images/flames.gif" class="flame left" alt="">
+
+        <h1>GUESS THE HERO</h1>
+
+        <img src="images/flames.gif" class="flame right" alt="">
+
+    </div>
+
+    <div id="game-choice">
+
+        <p>CHOOSE YOUR GAME</p>
+
+        <select id="question-count">
+
+            <option value="10">10 QUESTIONS</option>
+            <option value="20">20 QUESTIONS</option>
+
+        </select>
+
+    </div>
+
+    <button id="start-button">
+        START GAME
+    </button>
+
+</div>
+
+
+<!-- =========================
+     ÉCRAN DE JEU
+========================== -->
+
+<div id="game" style="display: none;">
+
+    <div class="title-container game-title">
+
+        <img src="images/flames.gif" class="flame left" alt="">
+
+        <h1>GUESS THE HERO</h1>
+
+        <img src="images/flames.gif" class="flame right" alt="">
+
+    </div>
+
+    <div id="score">
+        Score : 0 / 10
+    </div>
+
+    <div id="question-number">
+        QUESTION 1 / 10
+    </div>
+
+    <img
+        id="question-image"
+        src=""
+        alt="Guess the hero"
+    >
+
+    <input
+        type="text"
+        id="answer"
+        placeholder="Guess the character"
+        autocomplete="off"
+    >
+
+    <button id="validate-button">
+        VALIDATE
+    </button>
+
+    <p id="result" class="result"></p>
+
+</div>
+
+
+<!-- =========================
+     ÉCRAN FINAL
+========================== -->
+
+<div id="end-screen" style="display: none;">
+
+    <div class="title-container">
+
+        <img src="images/flames.gif" class="flame left" alt="">
+
+        <h1 class="end-title">
+            GAME OVER
+        </h1>
+
+        <img src="images/flames.gif" class="flame right" alt="">
+
+    </div>
+
+    <p id="final-score">
+        SCORE : 0 / 10
+    </p>
+
+    <button id="restart-button">
+        PLAY AGAIN
+    </button>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>

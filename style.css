@@ -1,0 +1,534 @@
+body {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(111, 159, 181, 0.22),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(111, 159, 181, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(111, 159, 181, 0.12),
+            transparent 35%
+        ),
+        #090909;
+
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   TITRE
+========================= */
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    color: white;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #00ccff,
+        0 0 20px #00ccff,
+        0 0 40px #0088ff,
+        0 0 70px rgba(0, 204, 255, 0.8);
+
+    animation: titleGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 5px white,
+            0 0 10px #00ccff,
+            0 0 20px #00ccff,
+            0 0 40px #0088ff,
+            0 0 70px rgba(0, 204, 255, 0.8);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px white,
+            0 0 20px #00ccff,
+            0 0 40px #00ccff,
+            0 0 70px #0088ff,
+            0 0 110px rgba(0, 204, 255, 1);
+    }
+}
+
+
+/* =========================
+   FLAMMES
+========================= */
+
+.flame {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 5px #ff4500)
+        drop-shadow(0 0 15px #ff8c00)
+        drop-shadow(0 0 25px #ff4500);
+}
+
+.flame.left {
+    transform: scaleX(-1);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+#question-image {
+    display: block;
+
+    width: 1150px;
+    max-width: 85vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+#score {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    padding: 12px 22px;
+
+    background-color: #080808;
+    color: white;
+
+    border: 3px solid #ff8c00;
+    border-radius: 10px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #ff8c00,
+        0 0 20px #ff8c00,
+        0 0 35px #ff4500;
+
+    box-shadow:
+        0 0 5px #ff8c00,
+        0 0 15px #ff8c00,
+        0 0 30px #ff8c00,
+        0 0 50px rgba(255, 69, 0, 0.7),
+        inset 0 0 15px rgba(255, 140, 0, 0.4);
+}
+
+
+/* =========================
+   NUMERO DE QUESTION
+========================= */
+
+#question-number {
+    margin-top: 5px;
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    color: #6f9fb5;
+
+    text-shadow:
+        0 0 5px #6f9fb5,
+        0 0 15px #6f9fb5;
+}
+
+
+/* =========================
+   CHAMP DE REPONSE
+========================= */
+
+#answer {
+    display: block;
+
+    width: 340px;
+    max-width: 80%;
+
+    margin: 8px auto 0;
+
+    padding: 12px 18px;
+
+    background-color: #080808;
+    color: white;
+
+    border: 2px solid #4f9fbd;
+    border-radius: 8px;
+
+    font-size: 17px;
+    text-align: center;
+
+    outline: none;
+
+    box-shadow:
+        0 0 5px #4f9fbd,
+        0 0 15px #4f9fbd,
+        0 0 30px rgba(79, 159, 189, 0.5);
+
+    transition: all 0.2s ease;
+}
+
+
+#answer:focus {
+
+    border-color: #4f9fbd;
+
+    box-shadow:
+        0 0 5px #4f9fbd,
+        0 0 15px #4f9fbd,
+        0 0 30px #4f9fbd,
+        0 0 50px rgba(79, 159, 189, 0.7),
+        inset 0 0 15px rgba(79, 159, 189, 0.25);
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #4f9fbd;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+#validate-button,
+#start-button,
+#restart-button {
+
+    padding: 14px 45px;
+
+    background-color: #151515;
+    color: white;
+
+    border: 2px solid #f99e1a;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #f99e1a;
+
+    box-shadow:
+        0 0 5px #f99e1a,
+        0 0 15px #f99e1a,
+        0 0 30px rgba(249, 158, 26, 0.5);
+}
+
+
+#validate-button {
+    margin-top: 10px;
+}
+
+
+#start-button,
+#restart-button {
+    margin-top: 25px;
+}
+
+
+#validate-button:hover,
+#start-button:hover,
+#restart-button:hover {
+
+    transform: scale(1.08);
+
+    background-color: #ff8c00;
+    color: #111;
+
+    border-color: #ffb347;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px #ff4500;
+
+    box-shadow:
+        0 0 5px #ffb347,
+        0 0 15px #ff8c00,
+        0 0 30px #ff8c00,
+        0 0 50px #ff4500,
+        0 0 80px rgba(255, 69, 0, 0.8);
+}
+
+
+/* =========================
+   MENU DE DEPART
+========================= */
+
+#start-screen {
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+#game-choice {
+
+    margin-top: 20px;
+}
+
+
+#game-choice p {
+
+    font-size: 24px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px #00ccff,
+        0 0 15px #00ccff;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+#question-count {
+
+    padding: 12px 25px;
+
+    background-color: #080808;
+    color: white;
+
+    border: 2px solid #4f9fbd;
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-align: center;
+
+    outline: none;
+
+    box-shadow:
+        0 0 5px #4f9fbd,
+        0 0 15px #4f9fbd,
+        0 0 30px rgba(79, 159, 189, 0.5);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESULTAT
+========================= */
+
+.result {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.3);
+
+    margin: 0;
+
+    font-size: 90px;
+    font-weight: 900;
+
+    letter-spacing: 6px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation: resultPop 0.4s ease-out forwards;
+}
+
+
+@keyframes resultPop {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+
+        opacity: 0;
+    }
+
+    60% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   CORRECT
+========================= */
+
+.correct {
+
+    color: #00ff66;
+
+    -webkit-text-stroke: 3px black;
+
+    paint-order: stroke fill;
+
+    text-shadow:
+        0 0 10px #00ff66,
+        0 0 25px #00ff66,
+        0 0 50px #00ff66,
+        0 0 100px rgba(0, 255, 102, 0.9);
+}
+
+
+/* =========================
+   WRONG
+========================= */
+
+.wrong {
+
+    color: #ff3333;
+
+    -webkit-text-stroke: 3px black;
+
+    paint-order: stroke fill;
+
+    text-shadow:
+        0 0 10px #ff3333,
+        0 0 25px #ff3333,
+        0 0 50px #ff3333,
+        0 0 100px rgba(255, 51, 51, 0.9);
+}
+
+
+/* =========================
+   ECRAN FINAL
+========================= */
+
+#end-screen {
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.end-title {
+
+    font-size: 80px;
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    color: white;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #00ccff,
+        0 0 30px #00ccff,
+        0 0 60px #0088ff,
+        0 0 100px #00ccff;
+
+    animation:
+        titleGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+#final-score {
+
+    font-size: 55px;
+    font-weight: 900;
+
+    color: #ff8c00;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ff8c00,
+        0 0 30px #ff8c00,
+        0 0 60px #ff4500,
+        0 0 100px rgba(255, 69, 0, 0.8);
+}
+
+
+/* Flammes du titre pendant le jeu */
+.game-title .flame {
+    width: 70px;
+    height: 70px;
+}
+
+.game-title h1 {
+    font-size: 42px;
+}
+
+#game #question-number {
+    margin-top: -15px;
+}
