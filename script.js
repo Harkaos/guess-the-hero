@@ -465,7 +465,7 @@ function checkAnswer() {
 
         setTimeout(
             nextQuestion,
-            1000
+            500
         );
     }
 
